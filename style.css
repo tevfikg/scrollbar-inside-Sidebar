@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #1b1b1b;
+    background-color: #eceeee;
+    position: relative;
+}
+/* Container for the main content */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-right: 270px; 
+}
+header {
+    margin-bottom: 30px;
+}
+h1 {
+    font-size: 2.2rem;
+    color: #1b1b1b;
+    border-bottom: 2px solid #e87512;
+    padding-bottom: 10px;
+}
+main {
+    background-color: #eceeee;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+article {
+    max-width: 800px;
+}
+article h2 {
+    color: #444;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+article p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+/* Styles for the Code display */
+.code-container {
+    background-color: #f5f5f5;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 30px 0;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+}
+
+pre {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre;
+    color: #333;
+}
+
+code {
+    display: block;
+}
+
+.comment {
+    color: #008000;
+}
+
+.property {
+    color: #0000ff;
+}
+
+.value {
+    color: #a31515;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 250px;
+    height: calc(100vh - 40px);
+    background: rgba(164, 84, 14, 0.6);
+    color: #ececee;
+    padding: 15px 15px 25px 15px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #020c56 rgb(38, 0, 255);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+.sidebar::-webkit-scrollbar-track {
+    background: orangered;
+    border-radius: 4px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+    background: #020c56;
+    border-radius: 4px;
+}
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #010840;
+}
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #008000;
+}
+.sidebar ul {
+    list-style-type: none;
+    position: relative;
+}
+.sidebar ul li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(74, 7, 132, 0.3);
+}
+.sidebar ul li:last-child {
+    border-bottom: none;
+}
+.sidebar ul li a {
+    color: #eceeee;
+    text-decoration: none;
+    display: block;
+    transition: padding 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    padding-left: 10px;
+    font-weight: bold;
+}
+/* Scroll indicator */
+.sidebar::after {
+    content: "↓ Scroll for more ↓";
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, #e87512 40%);
+    text-align: center;
+    padding: 15px 0 5px 0;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+/* Partially visible items at the bottom */
+.sidebar ul::after {
+    content: "";
+    position: sticky;
+    bottom: -15px;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(transparent, #e87512);
+    pointer-events: none;
+}
+
+/* Media Queries for Responsiveness of the WebSite */
+@media screen and (max-width: 1024px) {
+    .container {
+        padding-right: 20px;
+    }
+    
+    .sidebar {
+        width: 220px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .container {
+        padding-right: 20px;
+        margin-bottom: 300px; 
+    }
+    
+    .sidebar {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        width: calc(100% - 40px);
+        height: 250px;
+    }
+}
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    article h2 {
+        font-size: 1.5rem;
+    }
+    
+    article p {
+        font-size: 1rem;
+    }
+}
+
+    /* Styles for the code display */
+    .code-container {
+        background-color: #f5f5f5;
+        border-radius: 6px;
+        padding: 20px;
+        margin: 30px 0;
+        overflow-x: auto;
+        border: 1px solid #ddd;
+    }
+    
+    pre {
+        margin: 0;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 14px;
+        line-height: 1.5;
+        white-space: pre;
+        color: #333;
+    }
+    
+    code {
+        display: block;
+    }
+    
+    .comment {
+        color: #008000;
+    }
+    
+    .property {
+        color: #0000ff;
+    }
+    
+    .value {
+        color: #a31515;
+    }
+
+    /* Footer Styles */
+    footer {
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #e87512; /* Same as sidebar */
+        color: #ffffff;
+        text-align: center;
+        padding: 15px 0;
+        font-family: 'Comic Neue', cursive;
+        font-size: 1.4rem;
+        font-weight: 700;
+        z-index: 99;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Colorful text styles */
+    .colorful-text span {
+        display: inline-block;
+    }
+
+    /* Make space for footer */
+    body {
+        margin-bottom: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container {
+        flex: 1;
+        padding-bottom: 20px;
+    }
+
+    /* Responsive footer adjustments */
+    @media screen and (max-width: 768px) {
+        footer {
+            padding: 12px 0;
+            font-size: 1.2rem;
+        }
+        
+        /* Adjust for mobile view with bottom sidebar */
+        .sidebar {
+            bottom: 60px; /* Give space for footer */
+        }
+    }

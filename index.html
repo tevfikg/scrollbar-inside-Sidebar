@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollbar Inside Sidebar</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Google Fonts for comic style -->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SCROLLBAR INSIDE SIDEBAR</h1>
+        </header>
+        <main>
+            <article>
+                <h2>How to Add a Scrollbar Inside a Sidebar Using HTML and CSS</h2>
+                <p>
+                    A sidebar is a common UI element used for navigation, filters, or additional content. When dealing
+                    with long content, adding a scrollbar inside the sidebar ensures a better user experience.
+                </p>
+                <p>
+                    Sidebars help organize navigation elements and secondary content, keeping the main content area
+                    clean and focused. With responsive design, sidebars can adapt to different screen sizes for optimal
+                    viewing on all devices.
+                </p>
+                <p>
+                    Using CSS properties like 'overflow-y: auto' and a fixed height, we can create a scrollable sidebar
+                    that contains all navigation options without taking up too much vertical space on the page.
+                </p>
+                
+                <h3>CSS Code for Custom Scrollbar</h3>
+                <div class="code-container">
+                    <pre><code>/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 250px;
+    height: calc(100vh - 40px);
+    background: #e87512;
+    color: #eceeee;
+    padding: 15px 15px 25px 15px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #020c56 orangered;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: orangered;
+    border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #020c56;
+    border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #010840;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eceeee;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    position: relative;
+}
+
+.sidebar ul li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(74, 7, 132, 0.3);
+}
+
+.sidebar ul li:last-child {
+    border-bottom: none;
+}
+
+.sidebar ul li a {
+    color: #eceeee;
+    text-decoration: none;
+    display: block;
+    transition: padding 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+/* Scroll indicator */
+.sidebar::after {
+    content: "↓ Scroll for more ↓";
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, #e87512 40%);
+    text-align: center;
+    padding: 15px 0 5px 0;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+/* Partially visible items at the bottom */
+.sidebar ul::after {
+    content: "";
+    position: sticky;
+    bottom: -15px;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(transparent, #e87512);
+    pointer-events: none;
+}</code></pre>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <div class="sidebar">
+        <h2>Sidebar Menu</h2>
+        <ul>
+            <li><a href="#">SIDEBAR</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">SOCIAL</a></li>
+            <li><a href="#">PRODUCTS</a></li>
+            <li><a href="#">SERVICES</a></li>
+            <li><a href="#">PORTFOLIO</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <li><a href="#">BLOG</a></li>
+            <li><a href="#">TESTIMONIALS</a></li>
+            <li><a href="#">TEAM</a></li>
+            <li><a href="#">PARTNERS</a></li>
+            <li><a href="#">SUPPORT</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">CAREERS</a></li>
+            <li><a href="#">EVENTS</a></li>
+            <li><a href="#">RESOURCES</a></li>
+            <li><a href="#">DOWNLOADS</a></li>
+            <li><a href="#">PRICING</a></li>
+            <li><a href="#">GALLERY</a></li>
+            <li><a href="#">NEWSLETTER</a></li>
+            <li><a href="#">MEMBERSHIP</a></li>
+            <li><a href="#">LOCATION</a></li>
+            <li><a href="#">SITEMAP</a></li>
+            <li><a href="#">TERMS</a></li>
+            <li><a href="#">PRIVACY</a></li>
+        </ul>
+    </div>
+
+    <!-- Sticky Footer with colorful text -->
+    <footer>
+        <div class="colorful-text">
+            <span style="color: #ECEEEE;">D</span>
+            <span style="color: #33FF57;">i</span>
+            <span style="color: #3357FF;">j</span>
+            <span style="color: #ffffff;">i</span>
+            <span style="color: #1a2a7a;">t</span>
+            <span style="color: #f4008a;">a</span>
+            <span style="color: #F3FF33;">r</span>
+            <span style="color: #008000;">t</span>
+            <span style="color: #33FFB0;"> </span>
+            <span style="color: #8033FF;">D</span>
+            <span style="color: #2e8107;">e</span>
+            <span style="color: #33FF63;">v</span>
+            <span style="color: #720707;">e</span>
+            <span style="color: #746a03;">l</span>
+            <span style="color: #33FFD4;">o</span>
+            <span style="color: #D4FF33;">p</span>
+            <span style="color: #008860;">e</span>
+            <span style="color: #9e152e;">r</span>
+            <span style="color: #4F33FF;">s</span>
+        </div>
+    </footer>
+</body>
+</html>
